@@ -1,0 +1,30 @@
+h1 {
+  font-weight: 300;
+  font-size: 2.5rem;
+}
+
+.title-container {
+  padding: 1.5% 5%;
+  border: 1px solid #dfdfdf;
+  background-color: #eeedf1;
+  color: #433e66;
+}
+
+.content-container {
+  margin: 0 15%;
+}
+
+.numb-container {
+  margin: 2.5% 0 0 0;
+}
+
+.numb-products {
+  padding: 0.4% 0;
+  border-bottom: 3px solid #dfbe7f;
+  text-transform: uppercase;
+}
+
+.products-container {
+  border-top: 1px solid #dfdfdf;
+  margin: 3% 0;
+}

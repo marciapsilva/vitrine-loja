@@ -1,0 +1,37 @@
+img {
+  height: 80px;
+  width: 80px;
+  margin: 1.2% 0;
+}
+
+.product-container {
+  margin: 0;
+  padding: 0;
+  border: 1px solid #dfdfdf;
+  border-top: none;
+}
+
+.img-container {
+  width: 44%;
+  margin: 0 0.5%;
+}
+
+.product-line {
+  margin: 1% 0;
+  font-weight: lighter;
+  font-size: 0.9rem;
+  color: #8a8a8a;
+}
+
+.price-container {
+  margin-right: 8%;
+}
+
+.old-price {
+  margin-right: 3%;
+  color: #8a8a8a;
+}
+
+.old-price span {
+  text-decoration:line-through;
+}

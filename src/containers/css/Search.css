@@ -1,0 +1,46 @@
+form {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.menu { 
+  width: 34%;
+}
+
+.fa-search {
+  padding: 0 5%;
+  color: #8e8ca3;
+}
+
+.menu input {
+  width: 100%;
+  padding: 1.5% 0 1% 0;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: lighter;
+}
+
+.menu input::placeholder {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #8e8ca3;
+}
+
+.menu button {
+  width: 30px;
+  padding: 0 6%;
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.fa-times {
+  padding: 2px 3px;
+  color: #fff;
+  background-color: #8e8ca3;
+  border-radius: 50%;
+  font-size: 0.7rem;
+}
