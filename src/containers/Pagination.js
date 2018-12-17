@@ -3,11 +3,21 @@ import './css/Pagination.css';
 
 class Pagination extends Component {
   state = {
-    currentPage: this.props.products.currentPage,
+    currentPage: 1,
     prevButtonsClasses: 'page disable-button',
     nextButtonsClasses: 'page',
     onePageScenario: 'page disable-button',
   };
+
+  componentDidUpdate = () => {
+    if (this.props.products.currentPage === 1 && this.state.prevButtonsClasses === 'page') {
+      this.setState( {
+        currentPage: 1,
+        prevButtonsClasses: 'page disable-button',
+        nextButtonsClasses: 'page'
+      } );
+    };
+  }
 
   goToFirstPage = async () => {
     this.updateState(1);
@@ -22,8 +32,8 @@ class Pagination extends Component {
   }
 
   goToNextPage = async () => {
-    this.updateState(this.state.currentPage +  1);
-    await this.props.onChange(this.state.currentPage +  1);
+    await this.updateState(this.state.currentPage +  1);
+    await this.props.onChange(this.state.currentPage);
     this.checkDisableButtons();
   }
 
@@ -58,7 +68,7 @@ class Pagination extends Component {
     }
   }
 
-  handleClick = async (e) => {    
+  handleClick = async (e) => {        
     this.setState( {
       currentPage: Number(e.target.innerText)
     } );
@@ -69,9 +79,6 @@ class Pagination extends Component {
   }
 
   render() {
-    // console.log('pagination ' + this.props.products.currentPage);
-    // console.log(this.state.currentPage);
-
     const numberOfPages = this.props.products.numberOfPages;
     const currentPage = this.props.products.currentPage;
     let pages = [];
@@ -82,22 +89,17 @@ class Pagination extends Component {
 
     let restrictedPages;
 
-    // console.log('Current page: ' + currentPage, 'Numero de pages: ' + numberOfPages)
-
-    if (currentPage < 3) {
-      restrictedPages = pages.filter(page => page <= 3);
+    if (currentPage < 6) {
+      restrictedPages = pages.filter(page => page <= 6);
     }
 
-    if (currentPage >= 3 && currentPage !== numberOfPages) {
-      // console.log(pages);
-      restrictedPages = pages.filter(page => page >= currentPage - 1 && page <= currentPage + 1);
+    if (currentPage >= 6 && currentPage !== numberOfPages) {
+      restrictedPages = pages.filter(page => page >= currentPage - 4 && page <= currentPage + 1);
     } 
 
     if (currentPage === numberOfPages) {
-      restrictedPages = pages.filter(page => page >= currentPage - 2 && page <= currentPage);
+      restrictedPages = pages.filter(page => page >= currentPage - 5 && page <= currentPage);
     }
-
-    // console.log('restrictedPages: ' + restrictedPages);
 
     const pageButtons = restrictedPages.map(page => {
       return <li key={`page-${page}`}>

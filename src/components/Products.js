@@ -20,12 +20,6 @@ const Products = (props) => {
     }
   })
 
-  // console.log('MUDANÇA DE PÁGINA');
-  // console.log('Página atual: ' + props.products.currentPage);
-  // console.log('Produtos por página: ' + props.products.productsPerPage);
-  // console.log('Primeiro produto da página:');
-  // console.log(productsGroup[0]);
-
   const loading = <div className="d-flex fd-column j-center">
     <p>Carregando produtos</p>
   </div>;

@@ -3,6 +3,10 @@ nav {
   margin: 0 5%;
 }
 
+nav button {
+  background-color: #fff;
+}
+
 .logo {
   font-size: 2rem;
   font-weight: bold;

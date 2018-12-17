@@ -1,7 +1,7 @@
 import React from 'react';
 import './css/Product.css';
 
-const Product = (props) => {
+const Product = (props) => {  
   return (
       <div className="product-container" key={props.product._id}>
         <div className="d-flex j-between">
@@ -19,8 +19,8 @@ const Product = (props) => {
           </div>
           <div className="d-flex al-center w-20">
             <div className="d-flex j-end price-container w-100">
-              <p className="old-price"><span>R${props.product.originalPrice}</span> por</p>
-              <p className="new-price">R${props.product.newestPrice}</p>
+              <p className="old-price"><span>R${props.product.originalPrice.toFixed(2).toString().replace('.', ',')}</span> por</p>
+              <p className="new-price">R${props.product.newestPrice.toFixed(2).toString().replace('.', ',')}</p>
             </div>
           </div>
         </div>

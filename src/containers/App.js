@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './css/App.css';
 import Search from './Search';
 import Products from '../components/Products';
@@ -75,36 +74,39 @@ class App extends Component {
     } );
   }
 
-  render() {
-    // console.log('render');
-    // console.log(this.state);
-    // console.log(this.state.firstItemOnPage());
-    // console.log('main ' + this.state.currentPage);
+  returnHome = (e) => {
+    e.preventDefault();
 
+    this.setState( {
+      searchEntry: '',
+      notFound: false,
+      totalFound: 0,
+      productsFound: [],
+      numberOfPages: Math.ceil(this.state.totalProducts / this.state.productsPerPage)
+    } );
+  }
+
+  render() {
     return (
-        <div className="App">
-          <header>
-            <nav className="d-flex j-between al-center">
-              <div className="logo">mmartan</div>
-              <Search stateUpdate={this.searchResult} productsDb={this.state.productsDb} numberOfPages={this.numberOfPages}/>
-            </nav>
-          </header>
-          <main>
-            <Products products={this.state} />
-            {/* <Switch>
-              <Route exact path='/' component={ProductList} />
-              <Route path='/search?:keyword/:number-of-pages/page-:page' component={SearchResults} />
-            </Switch> */}
-            <div className="d-flex fd-column j-center">
-                { !this.state.notFound ? 
-                  <div className="pagination-container d-flex fd-row j-between al-baseline">
-                    <ItemsPerPage onChange={this.itemsPerPage} />
-                    <Pagination onChange={this.pageChange} products={this.state} />
-                  </div> :
-                  null }
-            </div>
-          </main>
-        </div>
+      <div className="App">
+        <header>
+          <nav className="d-flex j-between al-center">
+            <button onClick={this.returnHome} className="logo">mmartan</button>
+            <Search stateUpdate={this.searchResult} productsDb={this.state.productsDb} numberOfPages={this.numberOfPages}/>
+          </nav>
+        </header>
+        <main>
+          <Products products={this.state} />
+          <div className="d-flex fd-column j-center">
+              { !this.state.notFound ? 
+                <div className="pagination-container d-flex fd-row j-between al-baseline">
+                  <ItemsPerPage onChange={this.itemsPerPage} />
+                  <Pagination onChange={this.pageChange} products={this.state} />
+                </div> :
+                null }
+          </div>
+        </main>
+      </div>
     );
   }
 }

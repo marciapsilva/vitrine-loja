@@ -63,11 +63,13 @@ class Search extends Component {
   render() {
     return (
       <div className="menu d-flex j-end al-center">
-        <form onSubmit={this.handleSubmit} className="d-flex j-center al-center">
-          <i className="fas fa-search" />
-          <input onChange={this.handleChange} id="search" type="text" placeholder="O que você está procurando?" value={this.state.searchEntry} />
-          <button id="btn-search"><i className="fas fa-times"></i></button>
-        </form>
+        <div className="search-container d-flex j-center al-center">
+          <form onSubmit={this.handleSubmit} className="d-flex j-center al-center">
+            <i className="fas fa-search" />
+            <input onChange={this.handleChange} id="search" type="text" placeholder="O que você está procurando?" value={this.state.searchEntry} />
+          </form>
+          <button onClick={this.clearSearchInput} id="btn-search"><i className="fas fa-times"></i></button>
+        </div>
       </div>
     );
   }

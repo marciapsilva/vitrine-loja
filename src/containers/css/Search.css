@@ -1,12 +1,24 @@
-form {
-  width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  font-size: 0.9rem;
+.teste {
+  border: 1px solid red;
+}
+
+.teste2 {
+  border: 1px solid blue;
 }
 
 .menu { 
   width: 34%;
+}
+
+.search-container {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+form {
+  width: 100%;
+  font-size: 0.9rem;
 }
 
 .fa-search {
