@@ -34,7 +34,7 @@ Uma SPA em que se pode pesquisar produtos desejados.
 3. Após instalar as dependências, ligar o servidor por meio do comando npm start.
 4. Navegar! =)
 
-### Histórico
+## Histórico
 
 #### Versão 1.0.0 - MVP
 
